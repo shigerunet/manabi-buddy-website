@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>まなびバディ / Manabi Buddy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #34C759;
+      --green-dark: #248A3D;
+      --green-light: #E8F8ED;
+      --yellow: #FFD60A;
+      --text: #1C1C1E;
+      --text-light: #6C6C70;
+      --bg: #F2F2F7;
+      --white: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Nunito', 'Noto Sans JP', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* Header */
+    header {
+      background: var(--white);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #E5E5EA;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--green);
+    }
+
+    nav a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-light);
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    nav a:hover { color: var(--green); }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #34C759 0%, #30D158 50%, #248A3D 100%);
+      padding: 80px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .hero-emoji {
+      font-size: 72px;
+      margin-bottom: 24px;
+      display: block;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 8px;
+      position: relative;
+    }
+
+    .hero .subtitle {
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 32px;
+      position: relative;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: rgba(255,255,255,0.9);
+      max-width: 480px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    .app-store-btn {
+      display: inline-block;
+      background: var(--white);
+      color: var(--green-dark);
+      font-size: 16px;
+      font-weight: 800;
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .app-store-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+    }
+
+    /* Features */
+    .features {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 32px;
+      color: var(--text);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      font-size: 36px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .feature-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .feature-desc {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--white);
+      border-top: 1px solid #E5E5EA;
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    footer a {
+      color: var(--green);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">📚 まなびバディ</div>
+  <nav>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="mailto:manabibuddy.contact@gmail.com">お問い合わせ</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <span class="hero-emoji">📚</span>
+  <h1>まなびバディ</h1>
+  <p class="subtitle">Manabi Buddy</p>
+  <p class="hero-desc">
+    子供の家庭学習を、もっと楽しく。<br>
+    スケジュール管理・記録・家族で共有。<br><br>
+    Make learning at home more fun.<br>
+    Track, schedule, and share with family.
+  </p>
+  <a href="#" class="app-store-btn">🍎 App Storeでダウンロード</a>
+</section>
+
+<section class="features">
+  <h2 class="section-title">✨ 主な機能 / Features</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <span class="feature-icon">📅</span>
+      <div class="feature-title">曜日テンプレート</div>
+      <div class="feature-desc">曜日ごとの学習スケジュールを設定。毎日自動で反映されます。</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">⏱️</span>
+      <div class="feature-title">学習記録</div>
+      <div class="feature-desc">開始・終了時刻を記録して、学習時間を可視化。</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">📊</span>
+      <div class="feature-title">レポート</div>
+      <div class="feature-desc">週間・月間のレポートで学習状況を把握。</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">👨‍👩‍👧</span>
+      <div class="feature-title">家族で共有</div>
+      <div class="feature-desc">親のiPhoneと子供のiPadでリアルタイム同期。</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">👦</span>
+      <div class="feature-title">複数の子供に対応</div>
+      <div class="feature-desc">兄弟姉妹それぞれの学習を個別に管理。</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🌍</span>
+      <div class="feature-title">日本語・英語対応</div>
+      <div class="feature-desc">日本語と英語に対応。</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Manabi Buddy ·
+  <a href="privacy.html">プライバシーポリシー / Privacy Policy</a> ·
+  <a href="mailto:manabibuddy.contact@gmail.com">お問い合わせ / Contact</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>まなびバディ — プライバシーポリシー / Privacy Policy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #34C759;
+      --green-dark: #248A3D;
+      --green-light: #E8F8ED;
+      --text: #1C1C1E;
+      --text-light: #6C6C70;
+      --bg: #F2F2F7;
+      --white: #FFFFFF;
+      --radius: 16px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Nunito', 'Noto Sans JP', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid #E5E5EA;
+      padding: 20px 24px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .app-name {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .lang-toggle {
+      display: flex;
+      gap: 8px;
+    }
+
+    .lang-btn {
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      background: var(--bg);
+      color: var(--text-light);
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 16px;
+    }
+
+    .card h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card h2 .icon {
+      font-size: 20px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card ul li {
+      font-size: 15px;
+      color: var(--text-light);
+      padding: 4px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .card ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .highlight {
+      background: var(--green-light);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: var(--green-dark);
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    footer a {
+      color: var(--green);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="app-name">まなびバディ</div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('ja')">日本語</button>
+      <button class="lang-btn" onclick="setLang('en')">English</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- 日本語 -->
+  <div class="section active" id="ja">
+    <h1 class="page-title">プライバシーポリシー</h1>
+    <p class="updated">最終更新日：2026年3月</p>
+
+    <div class="card">
+      <h2><span class="icon">📱</span>概要</h2>
+      <p>まなびバディは、小中学生の家庭学習を管理するアプリです。私たちはユーザーのプライバシーを尊重し、保護します。</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="icon">📊</span>収集する情報</h2>
+      <p>アカウント登録時に以下の情報を収集します：</p>
+      <ul>
+        <li>メールアドレス（アカウント認証のため）</li>
+        <li>学習記録データ（科目、学習時間など）</li>
+        <li>子供のプロフィール情報（名前、アバター）</li>
+      </ul>
+      <div class="highlight">以下の情報は収集しません：位置情報、連絡先、写真・動画、決済情報</div>
+    </div>
+
+    <div class="card">
+      <h2><span class="icon">☁️</span>データの保存</h2>
+      <p>アカウント登録なしの場合、データはお使いのデバイスにのみ保存されます。</p>
+      <p>アカウント登録時は、デバイス間同期のためSupabase（supabase.com）のサーバーにデータを保存します。</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="icon">🔒</span>第三者への共有</h2>
+      <p>ユーザーの情報を第三者と共有・販売することはありません。</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="icon">👧</span>お子さまのプライバシー</h2>
+      <p>本アプリは未成年者が安全に使用できるよう設計されています。子供のデータは保護者のアカウントに紐付けて管理されます。</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="icon">📧</span>お問い合わせ</h2>
+      <p>ご質問がある場合は、以下までご連絡ください：</p>
+      <p><a href="mailto:manabibuddy.contact@gmail.com" style="color: var(--green);">manabibuddy.contact@gmail.com</a></p>
+    </div>
+  </div>
+
+  <!-- English -->
+  <div class="section" id="en">
+    <h1 class="page-title">Privacy Policy</h1>
+    <p class="updated">Last Updated: March 2026</p>
+
+    <div class="card">
+      <h2><span class="icon">📱</span>Overview</h2>
+      <p>Manabi Buddy is a family learning management app for elementary and middle school students. We respect and protect user privacy.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="icon">📊</span>Information We Collect</h2>
+      <p>When you create an account, we collect:</p>
+      <ul>
+        <li>Email address (for account authentication)</li>
+        <li>Study record data (subjects, study time, etc.)</li>
+        <li>Child profile information (name, avatar)</li>
+      </ul>
+      <div class="highlight">We do NOT collect: location data, contacts, photos/videos, or payment information.</div>
+    </div>
+
+    <div class="card">
+      <h2><span class="icon">☁️</span>Data Storage</h2>
+      <p>Without an account, all data is stored only on your device.</p>
+      <p>With an account, data is stored on Supabase (supabase.com) servers to enable cross-device sync.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="icon">🔒</span>Third-Party Sharing</h2>
+      <p>We do not share or sell user information with third parties.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="icon">👧</span>Children's Privacy</h2>
+      <p>This app is designed to be safe for minors. Children's data is managed under a parent's account.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="icon">📧</span>Contact Us</h2>
+      <p>If you have questions, please contact us at:</p>
+      <p><a href="mailto:manabibuddy.contact@gmail.com" style="color: var(--green);">manabibuddy.contact@gmail.com</a></p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 Manabi Buddy ·
+  <a href="mailto:manabibuddy.contact@gmail.com">manabibuddy.contact@gmail.com</a>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(lang).classList.add('active');
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>まなびバディ / Manabi Buddy — メール確認</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #34C759;
+      --green-dark: #248A3D;
+      --green-light: #E8F8ED;
+      --text: #1C1C1E;
+      --text-light: #6C6C70;
+      --bg: #F2F2F7;
+      --white: #FFFFFF;
+      --radius: 20px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Nunito', 'Noto Sans JP', sans-serif;
+      background: var(--bg);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+      animation: fadeUp 0.6s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .icon {
+      width: 80px;
+      height: 80px;
+      background: var(--green-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 40px;
+      animation: pop 0.4s ease 0.3s both;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.5); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    .app-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .message-ja {
+      background: var(--green-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .message-en {
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      font-family: 'Nunito', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      margin-bottom: 12px;
+      width: 100%;
+    }
+
+    .btn:hover {
+      background: var(--green-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .footer {
+      margin-top: 32px;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .footer a {
+      color: var(--green);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">✅</div>
+    <div class="app-name">まなびバディ · Manabi Buddy</div>
+    <h1>メールアドレスを確認しました</h1>
+    <p class="subtitle">Email Confirmed</p>
+
+    <div class="message-ja">
+      メールアドレスの確認が完了しました！<br>
+      アプリに戻って、学習記録を始めましょう。
+    </div>
+
+    <div class="message-en">
+      Your email has been successfully confirmed.<br>
+      Return to the app to start tracking your study sessions.
+    </div>
+
+    <a href="manabi-buddy://login-callback" class="btn">
+      アプリを開く / Open App
+    </a>
+
+    <div class="footer">
+      アプリがインストールされていない場合は<br>
+      App Storeからダウンロードしてください。<br><br>
+      If the app is not installed, please download it from the App Store.<br><br>
+      <a href="mailto:manabibuddy.contact@gmail.com">manabibuddy.contact@gmail.com</a>
+    </div>
+  </div>
+
+  <script>
+    // iOSの場合、自動的にアプリへリダイレクトを試みる
+    window.addEventListener('load', function() {
+      var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      if (isIOS) {
+        setTimeout(function() {
+          window.location.href = 'manabi-buddy://login-callback';
+        }, 1500);
+      }
+    });
+  </script>
+</body>
+</html>
